@@ -1,26 +1,48 @@
 package filesys;
 
-public class ExceptionSystemeFichier extends Exception{
+/**
+ * 
+ * @author Pierre Lizet et Philippe Joulot
+ *
+ */
+public class ExceptionSystemeFichier extends Exception {
 
+    /**.
+     * Identificateur
+     */
+	private static final long serialVersionUID = 7643154131469600578L;
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7643154131469600578L;
-	public ExceptionSystemeFichier()
-	{
+	public ExceptionSystemeFichier() {
 		super("Erreur système");
 	}
-	public ExceptionSystemeFichier(String message, Throwable cause)
-	{
+	/**
+	 * 
+	 * @param message
+	 *     Message lié à l'exception
+	 * @param cause
+	 *     Cause liée à l'exception
+	 */
+	public ExceptionSystemeFichier(String message, Throwable cause) {
 		super(message, cause);
 	}
-	public ExceptionSystemeFichier(String message)
-	{
+	/**
+	 * 
+	 * @param message
+	 *     Message lié à l'exception
+	 */
+	public ExceptionSystemeFichier(String message) {
 		super(message);
 	}
-	public ExceptionSystemeFichier(Throwable cause)
-	{
-		super("Erreur système",cause);
+	/**
+	 * 
+	 * @param cause
+	 *     Cause liée à l'exception
+	 */
+	public ExceptionSystemeFichier(Throwable cause) {
+		super("Erreur système", cause);
 	}
 	
 }

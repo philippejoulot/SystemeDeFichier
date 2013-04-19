@@ -7,20 +7,28 @@ package filesys;
  * @version 1.0
  */
 public abstract class Composant {
+    
+    /**.
+     * Le nom du composant
+     */
 	protected String nom;
 
-	/**
+	/**.
 	 * Constructeur de la classe Composant
+	 * 
+	 * @param parnom
+	 *     Le nom du comoosant
 	 * @throws ExceptionSystemeFichier 
+	 *     Exception levée si le nom est nul.
 	 */
 	public Composant(String parnom) throws ExceptionSystemeFichier {
 		// initialise instance variables
-		if(parnom.equals(""))
-			throw new ExceptionSystemeFichier("On ne peut pas ajouter un répertoire à lui-même.");
-		else
-			nom = parnom;
+		if (parnom.equals("") || parnom == null) {
+		    throw new ExceptionSystemeFichier("On ne peut pas ajouter un répertoire avec un nom nul."); }
+		else {
+		    nom = parnom; }
 	}
-	/**
+	/**.
 	 * La taille du composant
 	 * @return la taille du composant
 	 */
@@ -38,26 +46,25 @@ public abstract class Composant {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if (this == obj) {
+		    return true; }
+		if (obj == null) {
+		    return false; }
+		if (getClass() != obj.getClass()) {
+		    return false; }
 		Composant other = (Composant) obj;
 		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
-			return false;
+			if (other.nom != null) {
+			    return false; }
+		} else if (!nom.equals(other.nom)) {
+		    return false; }
 		return true;
 	}
-	/**
+	/**.
 	 * Getter Nom
 	 * @return nom
 	 */
-	public String getNom()
-	{
-		return(nom);
+	public String getNom() {
+		return (nom);
 	}
 }

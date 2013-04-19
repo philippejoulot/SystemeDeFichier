@@ -2,6 +2,7 @@
 
 # On ignore les fichiers .class
 /*.class
+/target
 
 # On ignore la javadoc
 /doc

@@ -7,30 +7,37 @@ package filesys;
  * @version 1.0
  */
 public class File extends Composant {
-	// instance variables - replace the example below with your own
-	int taille;
-
 	/**
-	 * Constructeur de la classe ExceptionSystemeFichier
-	 * @throws ExceptionSystemeFichier 
+	 * La taille du fichier.
 	 */
+	private int taille;
+
+/**.
+ * Constructeur de la classe ExceptionSystemeFichier
+ * 
+ * @param parNom
+ *      Le nom du fichier
+ * @param partaille
+ *      La taille du fichier
+ * @throws ExceptionSystemeFichier
+ *      Exception levée si la taille du fichier est négative
+ */
 	public File(String parNom, int partaille) throws ExceptionSystemeFichier {
 		
 		super(parNom);
-		if(partaille<0)
-		{
-			throw new ExceptionSystemeFichier("La taille d'un fichier ne peut pas être négative");
-		}
-		else
-		{
-			taille = partaille;
+		if (partaille < 0) {
+		    throw new ExceptionSystemeFichier("La taille d'un fichier ne peut pas être négative"); }
+		else {
+		    taille = partaille;
 		}
 	}
 	
-	/**
+	/**.
 	 * Constructor for objects of class File
 	 * @param parNom
+	 *     Le Nom du fichier
 	 * @throws ExceptionSystemeFichier
+	 *     Exception levée si le nom est nul.
 	 */
 	public File(String parNom) throws ExceptionSystemeFichier {
 		super(parNom);
@@ -52,15 +59,15 @@ public class File extends Composant {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if (this == obj) {
+		    return true; }
+		if (!super.equals(obj)) {
+		    return false; }
+		if (getClass() != obj.getClass()) {
+		    return false; }
 		File other = (File) obj;
-		if (taille != other.taille)
-			return false;
+		if (taille != other.taille) {
+		    return false; }
 		return true;
 	}
 }
