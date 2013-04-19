@@ -1,17 +1,17 @@
 package filesys;
 
 /**
- * Write a description of class File here.
+ * La classe File décrit un fichier du système de fichiers.
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pierre Lizet et Philippe Joulot
+ * @version 1.0
  */
 public class File extends Composant {
 	// instance variables - replace the example below with your own
 	int taille;
 
 	/**
-	 * Constructor for objects of class File
+	 * Constructeur de la classe ExceptionSystemeFichier
 	 * @throws ExceptionSystemeFichier 
 	 */
 	public File(String parNom, int partaille) throws ExceptionSystemeFichier {

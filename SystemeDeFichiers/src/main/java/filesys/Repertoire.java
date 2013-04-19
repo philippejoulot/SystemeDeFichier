@@ -3,10 +3,10 @@ package filesys;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Repertoire here.
+ * La classe Repertoire décrit un répertoire du système de fichiers.
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pierre Lizet et Philippe Joulot
+ * @version 1.0
  */
 public class Repertoire extends Composant {
 	// instance variables - replace the example below with your own
@@ -14,7 +14,7 @@ public class Repertoire extends Composant {
 	private int nbrComposants;
 
 	/**
-	 * Constructor for objects of class Repertoire
+	 * Constructeur de la classe Répertoire
 	 * @throws ExceptionSystemeFichier 
 	 */
 	public Repertoire(String parNom) throws ExceptionSystemeFichier {
@@ -85,7 +85,7 @@ public class Repertoire extends Composant {
 	}
 	
 	/**
-	 * 
+	 * Getter nbrComposants
 	 * @return Le nombre de composants du répertoire
 	 */
 	

@@ -1,16 +1,16 @@
 package filesys;
 
 /**
- * Write a description of class Composant here.
+ * La classe Composant décrit un élément du Système de Fichiers qui sera soit un fichier, soit un répertoire.
  * 
- * @author (your name)
+ * @author Pierre Lizet et Philippe Joulot
  * @version 1.0
  */
 public abstract class Composant {
 	protected String nom;
 
 	/**
-	 * Constructor for objects of class Composant
+	 * Constructeur de la classe Composant
 	 * @throws ExceptionSystemeFichier 
 	 */
 	public Composant(String parnom) throws ExceptionSystemeFichier {
@@ -21,7 +21,7 @@ public abstract class Composant {
 			nom = parnom;
 	}
 	/**
-	 * la taille du composant
+	 * La taille du composant
 	 * @return la taille du composant
 	 */
 	public abstract int getTaille();

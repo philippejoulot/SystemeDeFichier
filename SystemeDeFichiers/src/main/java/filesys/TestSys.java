@@ -29,7 +29,7 @@ public class TestSys {
         File fich1;
 		fich1 = new File("fich1", 10);
 		int taille=fich1.getTaille();
-		Assert.assertTrue(taille >0);
+		Assert.assertTrue(taille >=0);
     }
     
     @Test(expected=ExceptionSystemeFichier.class)
