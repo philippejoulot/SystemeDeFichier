@@ -1,2 +1,7 @@
-/SystemeDeFichiers
-/SystemeDeFichiers/target/classes/filesys/*.class
+
+
+# On ignore les fichiers .class
+/*.class
+
+# On ignore la javadoc
+/doc
