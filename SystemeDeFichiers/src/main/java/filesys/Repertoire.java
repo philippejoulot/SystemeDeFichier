@@ -1,3 +1,6 @@
+/**
+ * Déclaration du package
+ */
 package filesys;
 
 import java.util.ArrayList;
@@ -62,7 +65,8 @@ public class Repertoire extends Composant {
                     }
                     if (!testMemeNom) {
                         throw new ExceptionSystemeFichier(
-                                "On ne peut pas ajouter deux composants de même nom.");
+                                "On ne peut pas ajouter deux composants "
+                                + "de même nom.");
                     } else {
                         this.composants.add(parComposant);
                         this.nbrComposants += 1;
@@ -130,8 +134,10 @@ public class Repertoire extends Composant {
     public int hashCode() {
         final int prime = 31;
         int result = super.hashCode();
-        result = prime * result
-                + ((composants == null) ? 0 : composants.hashCode());
+        result = prime * result;
+        if (composants != null) {
+            result += composants.hashCode();
+        }
         result = prime * result + nbrComposants;
         return result;
     }

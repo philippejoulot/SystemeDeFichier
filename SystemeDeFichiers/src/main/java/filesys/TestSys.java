@@ -11,13 +11,25 @@ import junit.framework.Assert;
  * @author Pierre Lizet et Philippe Joulot
  */
 public class TestSys {
+    /**.
+     * Variable de taille pour les tests
+     */
+    public static final int TAILLEPOSITIVE1 = 10;
+    /**.
+     * Variable de taille pour les tests
+     */
+    public static final int TAILLEPOSITIVE2 = 20;
+    /**.
+     * Variable de taille pour les tests
+     */
+    public static final int TAILLENEGATIVE1 = -10;
     /**
      * @throws ExceptionSystemeFichier
      *             Test susceptible de lancer une exception de type
      *             ExceptionSystemeFichier
      */
     @Test
-    public static void calculTailleVide() throws ExceptionSystemeFichier {
+    public void calculTailleVide() throws ExceptionSystemeFichier {
         File fich1;
         fich1 = new File("fich1");
         int taille = fich1.getTaille();
@@ -30,9 +42,9 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test
-    public static void calculTailleNonVide() throws ExceptionSystemeFichier {
+    public void calculTailleNonVide() throws ExceptionSystemeFichier {
         File fich1;
-        fich1 = new File("fich1", 10);
+        fich1 = new File("fich1", TAILLEPOSITIVE1);
         int taille = fich1.getTaille();
         Assert.assertTrue(taille >= 0);
     }
@@ -43,8 +55,8 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test(expected = ExceptionSystemeFichier.class)
-    public static void calculTailleNegative() throws ExceptionSystemeFichier {
-        File fich1 = new File("fich1", -10);
+    public void calculTailleNegative() throws ExceptionSystemeFichier {
+        File fich1 = new File("fich1", TAILLENEGATIVE1);
         int taille = fich1.getTaille();
         Assert.assertTrue(taille >= 0);
     }
@@ -55,11 +67,11 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test
-    public static void calculTailleRepertoire() throws ExceptionSystemeFichier {
+    public void calculTailleRepertoire() throws ExceptionSystemeFichier {
         Repertoire dir1;
         dir1 = new Repertoire("Dir1");
-        File fich1 = new File("fich1", 10);
-        File fich2 = new File("fich2", 20);
+        File fich1 = new File("fich1", TAILLEPOSITIVE1);
+        File fich2 = new File("fich2", TAILLEPOSITIVE2);
         dir1.ajoutComposant(fich1);
         dir1.ajoutComposant(fich2);
         int taille = dir1.getTaille();
@@ -72,7 +84,7 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test(expected = ExceptionSystemeFichier.class)
-    public static void referenceNulle() throws ExceptionSystemeFichier {
+    public void referenceNulle() throws ExceptionSystemeFichier {
         Repertoire dir1 = new Repertoire("Dir1");
         File fich1 = null;
         dir1.ajoutComposant(fich1);
@@ -85,10 +97,10 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test(expected = ExceptionSystemeFichier.class)
-    public static void ajoutMemeNom() throws ExceptionSystemeFichier {
+    public void ajoutMemeNom() throws ExceptionSystemeFichier {
         Repertoire dir1;
         dir1 = new Repertoire("Dir1");
-        File fich1 = new File("fich1", 10);
+        File fich1 = new File("fich1", TAILLEPOSITIVE1);
         dir1.ajoutComposant(fich1);
         dir1.ajoutComposant(fich1);
         ArrayList<Composant> contenu = dir1.getComposants();
@@ -111,7 +123,7 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test(expected = ExceptionSystemeFichier.class)
-    public static void ajoutSoitMeme() throws ExceptionSystemeFichier {
+    public void ajoutSoitMeme() throws ExceptionSystemeFichier {
         Repertoire dir1 = new Repertoire("Dir1");
         dir1.ajoutComposant(dir1);
         Assert.assertTrue(!dir1.getComposants().contains(dir1));
@@ -123,13 +135,13 @@ public class TestSys {
      *             ExceptionSystemeFichier
      */
     @Test(expected = ExceptionSystemeFichier.class)
-    public static void sousRepertoireLuiMeme() throws ExceptionSystemeFichier {
+    public void sousRepertoireLuiMeme() throws ExceptionSystemeFichier {
         Repertoire dir1;
         dir1 = new Repertoire("Dir1");
         Repertoire dir2 = new Repertoire("Dir2");
         Repertoire dir3 = new Repertoire("Dir3");
-        File fich1 = new File("Fich1", 10);
-        File fich2 = new File("Fich2", 10);
+        File fich1 = new File("Fich1", TAILLEPOSITIVE1);
+        File fich2 = new File("Fich2", TAILLEPOSITIVE1);
         dir1.ajoutComposant(dir2);
         dir1.ajoutComposant(fich1);
         dir2.ajoutComposant(dir3);

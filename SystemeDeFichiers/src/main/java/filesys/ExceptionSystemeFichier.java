@@ -1,3 +1,6 @@
+/**
+ * Déclaration du package
+ */
 package filesys;
 
 /**
@@ -12,7 +15,7 @@ public class ExceptionSystemeFichier extends Exception {
     private static final long serialVersionUID = 7643154131469600578L;
     /**.
      * Exception par défaut
-	 */
+	*/
 	public ExceptionSystemeFichier() {
 		super("Erreur système");
 	}

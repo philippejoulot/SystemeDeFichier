@@ -1,3 +1,6 @@
+/**
+ * Déclaration du package
+ */
 package filesys;
 
 /**
@@ -40,7 +43,10 @@ public abstract class Composant {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+        result = prime * result;
+        if (nom != null) {
+            result = prime * result + nom.hashCode();
+        }
         return result;
     }
 
@@ -65,12 +71,11 @@ public abstract class Composant {
         }
         return true;
     }
-
     /**
      * . Getter Nom
      * @return nom
      */
     public String getNom() {
-        return (nom);
+        return nom;
     }
 }
